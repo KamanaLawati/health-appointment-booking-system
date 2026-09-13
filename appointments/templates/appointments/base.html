@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Appointment Booking System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        nav {
+            background: #1565c0;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e3f2fd;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 9px;
+            margin: 7px 0 15px;
+            box-sizing: border-box;
+        }
+
+        button, .button {
+            background: #1565c0;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .message {
+            padding: 12px;
+            background: #e8f5e9;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="{% url 'home-page' %}">Home</a>
+    <a href="{% url 'doctors-page' %}">Doctors</a>
+    <a href="{% url 'patients-page' %}">Patients</a>
+    <a href="{% url 'patient-create-page' %}">
+        Register Patient
+    </a>
+    <a href="{% url 'appointments-page' %}">
+        Appointments
+    </a>
+    <a href="{% url 'appointment-create-page' %}">
+        Book Appointment
+    </a>
+    <a href="{% url 'appointment-report-page' %}">
+        Reports
+    </a>
+</nav>
+
+<div class="container">
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "appointments/base.html" %}
+
+{% block content %}
+
+<h1>Health Appointment Booking System</h1>
+
+<p>
+    Welcome to the Health Appointment Booking System.
+</p>
+
+<p>
+    Use the navigation menu to manage doctors, patients,
+    and appointments.
+</p>
+
+<a class="button" href="{% url 'appointment-create-page' %}">
+    Book an Appointment
+</a>
+
+{% endblock %}
